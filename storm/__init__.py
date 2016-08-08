@@ -29,7 +29,7 @@ class Storm(object):
         self.ssh_config.load()
         self.defaults = self.ssh_config.defaults
 
-    def add_entry(self, name, host, user, port, id_file, custom_options=[]):
+    def add_entry(self, name, host, user, port, id_file=None, custom_options=[]):
         if self.is_host_in(name):
             raise ValueError(ERRORS["already_in"].format(name))
 
@@ -57,7 +57,7 @@ class Storm(object):
 
         return True
 
-    def edit_entry(self, name, host, user, port, id_file, custom_options=[]):
+    def edit_entry(self, name, host, user, port, id_file=None, custom_options=[]):
         if not self.is_host_in(name):
             raise ValueError(ERRORS["not_found"].format(name))
 
@@ -123,7 +123,7 @@ class Storm(object):
 
         return formatted_results
 
-    def get_options(self, host, user, port, id_file, custom_options):
+    def get_options(self, host, user, port, id_file=None, custom_options):
         options = {
             'hostname': host,
             'user': user,
