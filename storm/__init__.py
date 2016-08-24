@@ -123,7 +123,7 @@ class Storm(object):
 
         return formatted_results
 
-    def get_options(self, host, user, port, id_file=None, custom_options):
+    def get_options(self, host, user, port, id_file, custom_options):
         options = {
             'hostname': host,
             'user': user,
