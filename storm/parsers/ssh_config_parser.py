@@ -179,7 +179,7 @@ class ConfigParser(object):
 
                 searchable_information += " " + value
 
-            if search_string.upper() in searchable_information or search_string.lower() in searchable_information:
+            if search_string.upper() in searchable_information or search_string.lower() in searchable_information or search_string.capitalize() in search_information:
                 results.append(host_entry)
 
         return results
